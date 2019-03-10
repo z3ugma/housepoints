@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    title title
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato', type='text/css')
+    link(rel='stylesheet', href="{{url_for('static', filename='hourglasses.css') }}", type='text/css')
+  body
+    table
+      - for i in points
+        tr
+          td 
+            strong {{i.name}}
+          td {{i.ct * 10}}
+    .hourglasses
+      - for house in points
+        .glass(class=house.name)
+          .points
+            h1 {{house.ct * 10}}
+          img(src="{{url_for('static', filename='hourglass.svg') }}")
+      
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', type='text/javascript')

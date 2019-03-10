@@ -1,0 +1,57 @@
+body{
+  font-family: Lato
+}
+
+.hourglasses {
+  width: 75vw;
+  margin: auto;
+  position: relative;
+}
+
+.glass {
+  line-height: 0;
+  float:left;
+  width: 25%;
+  position: relative;
+}
+.glass img {
+  width: 100%;
+  vertical-align: bottom;
+  display: block;
+}
+
+.points {
+  text-align:center;
+  z-index: 10;
+  position: absolute;
+  top: 15%;
+  width: 100%
+}
+
+.glass.gryffindor {
+  background-image: url("/static/gryffindor.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right 50% bottom -40%;
+}
+
+.glass.ravenclaw {
+  background-image: url("/static/ravenclaw.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right 50% bottom -20%;
+}
+
+.glass.hufflepuff {
+  background-image: url("/static/hufflepuff.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right 50% bottom -40%;
+}
+
+.glass.slytherin{
+  background-image: url("/static/slytherin.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right 50% bottom -40%;
+}
