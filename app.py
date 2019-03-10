@@ -1,6 +1,5 @@
 from flask import Flask, request, abort, g, render_template
 import json
-from termcolor import colored
 import peewee as pw
 
 from slackclient import SlackClient
