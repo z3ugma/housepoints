@@ -13,7 +13,7 @@ html
           background-image: url("/static/{{house.name}}.png");
           background-position: right 50% bottom {{house.height}}%;
         }
-        .{{house.name}} h1 {
+        .{{house.name}} h1, .{{house.name}} h2 {
           background-image: url("/static/{{house.name}}.png");
         }
   body
@@ -21,6 +21,7 @@ html
       - for house in points
         .glass(class=house.name)
           .points
+            h2 {{house.name.title()}}
             h1 {{house.ct * 10}}
           img(src="{{url_for('static', filename='hourglass.svg') }}")
       
