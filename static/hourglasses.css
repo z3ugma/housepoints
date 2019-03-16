@@ -16,7 +16,7 @@ body{
 
 @media only screen and (min-width: 600px) {
   h1 {
-    font-size: 3em;
+    font-size: 5vw;
   }
 }
 
@@ -44,7 +44,7 @@ body{
   z-index: 10;
   position: absolute;
   top: 15%;
-  width: 100%
+  width: 100%;
 }
 
 .glass{
