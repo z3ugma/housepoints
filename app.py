@@ -36,14 +36,15 @@ def before_request():
         pass
 
 
-@app.after_request
+@app.teardown_request
 def after_request(response):
     g.db.close()
     return response
 
-
+db.connect()
 database = {}
 houses = [i.name for i in House.select().where(House.name !="unknown")]
+db.close()
 
 message_attachments = [
     {
