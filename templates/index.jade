@@ -4,7 +4,7 @@ html
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width,initial-scale=1')
     title House Points
-    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato', type='text/css')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Merriweather:700i', type='text/css')
     link(rel='stylesheet', href="{{url_for('static', filename='hourglasses.css') }}", type='text/css')
     
     - for house in points
@@ -12,6 +12,9 @@ html
         .glass.{{house.name}} {
           background-image: url("/static/{{house.name}}.png");
           background-position: right 50% bottom {{house.height}}%;
+        }
+        .{{house.name}} h1 {
+          background-image: url("/static/{{house.name}}.png");
         }
   body
     .hourglasses

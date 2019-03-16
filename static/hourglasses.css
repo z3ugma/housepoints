@@ -1,6 +1,25 @@
 body{
-  font-family: Lato
+  font-family: 'Merriweather', serif;
 }
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 599px){
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+
 
 .hourglasses {
   width: 75vw;
@@ -32,4 +51,14 @@ body{
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: right 50% bottom -44%;
+}
+
+h1 {
+  background-image: url('/static/glitter.jpg');
+  padding:0.5em 0 0.5em 0;
+  margin: 0;
+  background-position: right 50% bottom 50%;
+  background-size: 100%;
+  color: transparent;
+  -webkit-background-clip: text;
 }
