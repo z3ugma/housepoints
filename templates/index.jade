@@ -3,16 +3,17 @@ html
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width,initial-scale=1')
-    title title
+    title House Points
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato', type='text/css')
     link(rel='stylesheet', href="{{url_for('static', filename='hourglasses.css') }}", type='text/css')
+    
+    - for house in points
+      style(type="text/css").
+        .glass.{{house.name}} {
+          background-image: url("/static/{{house.name}}.png");
+          background-position: right 50% bottom {{house.height}}%;
+        }
   body
-    table
-      - for i in points
-        tr
-          td 
-            strong {{i.name}}
-          td {{i.ct * 10}}
     .hourglasses
       - for house in points
         .glass(class=house.name)

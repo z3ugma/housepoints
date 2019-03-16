@@ -62,7 +62,12 @@ message_attachments = [
 
 @app.route('/')
 def hello_world():
-    query = House.select(House.name, pw.fn.COUNT(Point.id).alias('ct')).group_by(House.name).join(Point, pw.JOIN.LEFT_OUTER).where(House.name != "unknown").order_by(House.id)
+    query = House.select(House.name, pw.fn.COUNT(Point.id).alias('ct')).group_by(House.name).join(Point, pw.JOIN.LEFT_OUTER).where(House.name != "unknown").order_by(House.id).dicts()
+    vals = [x.get('ct') for x in query]
+    vals.append(1)
+    factor = (50/float(max(vals)))
+    for y in query:
+        y['height'] = y['ct']*factor -50.00
     return render_template('index.jade', points=query, houses=houses)
 
 @app.route('/points', methods=['POST'])

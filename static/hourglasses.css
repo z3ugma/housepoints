@@ -28,30 +28,8 @@ body{
   width: 100%
 }
 
-.glass.gryffindor {
-  background-image: url("/static/gryffindor.png");
+.glass{
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: right 50% bottom -40%;
-}
-
-.glass.ravenclaw {
-  background-image: url("/static/ravenclaw.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: right 50% bottom -20%;
-}
-
-.glass.hufflepuff {
-  background-image: url("/static/hufflepuff.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: right 50% bottom -40%;
-}
-
-.glass.slytherin{
-  background-image: url("/static/slytherin.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: right 50% bottom -40%;
+  background-position: right 50% bottom -44%;
 }
