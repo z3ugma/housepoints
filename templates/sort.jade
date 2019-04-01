@@ -1,0 +1,23 @@
+doctype html
+html
+  {% set housecolor = ["is-danger","is-info","is-warning","is-success"] %}
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    title House Points
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Merriweather:700i', type='text/css')
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css")
+    style(type='text/css').
+      .message-body {
+        border-width: 2px;
+      }
+  body
+    section.section
+      .container
+        .columns.is-multiline
+          - for person in people
+            .column.is-one-fifth
+              article.message(class=housecolor[person.house_id-1])
+                .message-body
+                  //- a(href="/sortinghat/sort/{{person.id}}")     {{person.name}}
+                  span {{person.name}}

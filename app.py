@@ -122,3 +122,8 @@ def sortinghat():
     person.house = house
     person.save()
     return "Well, if you're sure...better be... {0} !!".format(house.name.title())
+
+@app.route('/sortinghat', methods=['GET'])
+def sortinghatget():
+    people = Person.select().order_by(pw.fn.Lower(Person.name)) 
+    return render_template('sort.jade', people = people)
