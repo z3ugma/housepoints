@@ -75,7 +75,7 @@ def points():
     if request.json.get('challenge'):
         return request.json['challenge']
     
-    elif request.json.get('event').get('type') == "reaction_added":
+    elif request.json.get('event').get('type') == "reaction_added" and request.json.get('event').get('reaction') in ["house-point", "10-points-to", "hogwarts"]:
         try:
             targetuser = request.json.get('event')['item_user']
         except KeyError:
