@@ -1,17 +1,22 @@
 from flask import Flask, request, abort, g, render_template
 import json
 import peewee as pw
-
-from slackclient import SlackClient
-# Your app's Slack bot user token
-SLACK_BOT_TOKEN = 'xoxb-2181645134-568938734263-nEY50t9VPDc9DycpgOvR1RHZ'
-#SLACK_VERIFICATION_TOKEN = os.environ["SLACK_VERIFICATION_TOKEN"]
-
-# Slack client for Web API requests
-sc = SlackClient(SLACK_BOT_TOKEN)
+from ruamel.yaml import YAML
+yaml=YAML(typ='safe')
 
 app = Flask(__name__)
 app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
+
+with open('secrets.yml', 'r') as stream:
+    y = yaml.load(stream)
+    app.config.update(y)
+
+from slackclient import SlackClient
+# Your app's Slack bot user token
+SLACK_BOT_TOKEN = app.config['SLACK_BOT_TOKEN']
+# Slack client for Web API requests
+sc = SlackClient(SLACK_BOT_TOKEN)
+
 from db import db
 from models import House, Person, Point
 
