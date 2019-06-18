@@ -86,6 +86,8 @@ def points():
         except KeyError:
             abort(500)
         awardinguser = request.json.get('event')['user']
+        if targetuser == awardinguser:
+            return "Same User"
         for i in [targetuser, awardinguser]:
             reactuserinfo = sc.api_call("users.info", user=i).get('user')
             reactuser = {'slack_id': reactuserinfo['id'], 'name':choose_name(reactuserinfo), 'house': 5}
