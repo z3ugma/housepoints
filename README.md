@@ -8,4 +8,5 @@ A Slack bot for awarding house points
 1. Run `python dbinit.py` to create and seed a database with houses
 1. Run `flask run` and browse to http://localhost:5000 to see it in action
 
+![Screenshot](housepoints_screenshot.png)
 
